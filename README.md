@@ -1,6 +1,6 @@
 # vbe-decoder.py
 
-Decode one or multiple encoded VBScript files, often seen with a `.vbe` file extension.
+Decode one or multiple encoded VBScript files, often seen with a `.vbe` file extension. 
 
 ## Usage
 
@@ -28,7 +28,6 @@ $ python3 vbe-decoder.py encoded.vbe
 $ python3 vbe-decoder.py encoded.vbe -o decoded.vbs
 ```
 
-
 ---------------------------------
 
 Credit for this baseline code goes to Didier Stevens, from his original repo.
@@ -36,3 +35,5 @@ https://github.com/DidierStevens/DidierStevensSuite/blob/master/decode-vbe.py
 
 All I have done is merely cleaned the code a bit, made it Python3 friendly,
 and handled support for multiple #@~...#~@ markings. 
+
+Add some issues into John script (https://github.com/JohnHammond/vbe-decoder/issues/6)
