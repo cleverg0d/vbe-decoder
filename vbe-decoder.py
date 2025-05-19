@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 __description__ = "Decode an encoded VBScript, often seen as a .vbe file"
-__author__ = "John Hammond"
-__date__ = '02/10/2021'
+__author__ = "John Hammond | fixed by cleverg0d"
+__date__ = '02/10/2021 | fixed at 05/16/2025'
 
 """
 Credit for this baseline code goes to Didier Stevens, from his original repo.
@@ -99,10 +99,14 @@ def decode_files(files: list):
 
 def decode_file(file :str):
     try:
-        handle = open(file, 'r')
-        contents :str = handle.read()
+        try:
+            handle = open(file, 'r', encoding='utf-8')
+            contents :str = handle.read()
+        except UnicodeDecodeError:
+            handle = open(file, 'r', encoding='utf-16le')
+            contents :str = handle.read()
     except Exception as e:
-        fatal_error(f'{e.message}')
+        fatal_error(str(e))
     finally:
         handle.close()
 
